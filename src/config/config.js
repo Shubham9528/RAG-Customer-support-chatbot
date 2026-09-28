@@ -1,4 +1,4 @@
-require('dotenv').config();
+import 'dotenv/config';
 
 const config = {
   google: {
@@ -21,7 +21,7 @@ const config = {
 };
 
 // Validate required keys on startup
-const validateConfig = () => {
+export const validateConfig = () => {
   const missing = [];
   if (!config.google.apiKey) missing.push('GOOGLE_API_KEY');
   if (!config.pinecone.apiKey) missing.push('PINECONE_API_KEY');
@@ -31,4 +31,4 @@ const validateConfig = () => {
   }
 };
 
-module.exports = { config, validateConfig };
+export default config;

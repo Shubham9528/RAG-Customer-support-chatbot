@@ -1,11 +1,11 @@
-require('dotenv').config();
-const { validateConfig } = require('./src/config/config');
+import 'dotenv/config';
+import { validateConfig } from './src/config/config.js';
 
 // Validate environment variables before starting
 validateConfig();
 
-const express = require('express');
-const cors = require('cors');
+import express from 'express';
+import cors from 'cors';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -23,7 +23,7 @@ app.get('/', (req, res) => {
 });
 
 // TODO: Mount chat routes (Step 5)
-// const chatRoutes = require('./src/routes/chatRoutes');
+// import chatRoutes from './src/routes/chatRoutes.js';
 // app.use('/api', chatRoutes);
 
 // Start server

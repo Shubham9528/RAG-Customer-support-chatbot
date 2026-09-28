@@ -8,10 +8,16 @@
     "dev": "nodemon index.js",
     "ingest": "node src/scripts/ingest.js"
   },
-  "keywords": ["rag", "chatbot", "pinecone", "google-ai", "customer-support"],
+  "keywords": [
+    "rag",
+    "chatbot",
+    "pinecone",
+    "google-ai",
+    "customer-support"
+  ],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "dependencies": {
     "@google/generative-ai": "^0.21.0",
     "@pinecone-database/pinecone": "^3.0.3",
