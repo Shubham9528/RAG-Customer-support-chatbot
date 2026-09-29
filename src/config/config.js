@@ -1,4 +1,4 @@
-import 'dotenv/config';
+import "dotenv/config";
 
 const config = {
   google: {
@@ -6,28 +6,30 @@ const config = {
   },
   pinecone: {
     apiKey: process.env.PINECONE_API_KEY,
-    indexName: process.env.PINECONE_INDEX_NAME || 'customer-support-index',
+    indexName: process.env.PINECONE_INDEX_NAME || "customer-support-index",
   },
   server: {
     port: process.env.PORT || 3000,
   },
   rag: {
-    chunkSize: 500,          // characters per chunk
-    chunkOverlap: 50,        // overlap between chunks
-    topK: 5,                 // number of results to retrieve from Pinecone
-    embeddingModel: 'text-embedding-004',
-    chatModel: 'gemini-1.5-flash',
+    chunkSize: 500, // characters per chunk
+    chunkOverlap: 50, // overlap between chunks
+    topK: 5, // number of results to retrieve from Pinecone
+    embeddingModel: "gemini-embedding-001",
+    chatModel: "gemini-3.5-flash-lite",
   },
 };
 
 // Validate required keys on startup
 export const validateConfig = () => {
   const missing = [];
-  if (!config.google.apiKey) missing.push('GOOGLE_API_KEY');
-  if (!config.pinecone.apiKey) missing.push('PINECONE_API_KEY');
+  if (!config.google.apiKey) missing.push("GOOGLE_API_KEY");
+  if (!config.pinecone.apiKey) missing.push("PINECONE_API_KEY");
 
   if (missing.length > 0) {
-    throw new Error(`Missing required environment variables: ${missing.join(', ')}`);
+    throw new Error(
+      `Missing required environment variables: ${missing.join(", ")}`,
+    );
   }
 };
 
